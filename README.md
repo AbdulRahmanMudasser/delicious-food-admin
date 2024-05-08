@@ -1,4 +1,4 @@
-# delicious_food_admin
+# Flutter Delicious Food App Admin Panel
 
 A new Flutter project.
 
