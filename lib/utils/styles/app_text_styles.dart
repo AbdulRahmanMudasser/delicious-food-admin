@@ -20,6 +20,15 @@ class AppTextStyles {
     );
   }
 
+  static TextStyle boldDarkExtraLargeTextStyle() {
+    return TextStyle(
+      fontFamily: 'Poppins',
+      fontSize: 19.0.sp,
+      color: Colors.black,
+      fontWeight: FontWeight.bold,
+    );
+  }
+
   static TextStyle boldDarkSmallTextStyle() {
     return TextStyle(
       fontFamily: 'Poppins',

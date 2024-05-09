@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      initialRoute: RoutesName.HOME,
+      initialRoute: RoutesName.LOGIN,
       initialBinding: AllBindings(),
       getPages: AppRoutes.routes,
     );
