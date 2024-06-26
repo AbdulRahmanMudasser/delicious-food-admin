@@ -1,3 +1,4 @@
+import 'package:delicious_food_admin/pages/add_food_page.dart';
 import 'package:delicious_food_admin/pages/home_page.dart';
 import 'package:delicious_food_admin/pages/login_page.dart';
 import 'package:delicious_food_admin/routes/routes_name.dart';
@@ -12,6 +13,10 @@ class AppRoutes {
     GetPage(
       name: RoutesName.HOME,
       page: () => const HomePage(),
+    ),
+    GetPage(
+      name: RoutesName.ADDFOOD,
+      page: () => const AddFoodPage(),
     ),
   ];
 }

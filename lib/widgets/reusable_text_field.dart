@@ -8,13 +8,15 @@ class ReusableTextFormField extends StatelessWidget {
     required this.controller,
     required this.hintText,
     required this.onEmptyText,
-    required this.icon,
+     this.icon,
+    required this.obscureText
   });
 
   final TextEditingController controller;
   final String hintText;
   final String onEmptyText;
-  final IconData icon;
+  final IconData? icon;
+  final bool obscureText;
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +27,7 @@ class ReusableTextFormField extends StatelessWidget {
         prefixIcon: Icon(icon),
         hintStyle: AppTextStyles.boldDarkSmallTextStyle(),
       ),
+      obscureText: obscureText,
       validator: (value) {
         if (value!.isEmpty) {
           return onEmptyText;

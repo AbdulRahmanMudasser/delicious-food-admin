@@ -1,11 +1,13 @@
 import 'package:delicious_food_admin/bindings/bindings.dart';
+import 'package:delicious_food_admin/firebase_options.dart';
 import 'package:delicious_food_admin/routes/app_routes.dart';
 import 'package:delicious_food_admin/routes/routes_name.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
-void main() {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   SystemChrome.setPreferredOrientations([
@@ -14,6 +16,8 @@ void main() {
   ]);
 
   /// Set the Style of Status Bar
+
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
   runApp(const MyApp());
 }

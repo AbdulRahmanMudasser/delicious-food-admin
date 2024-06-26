@@ -1,3 +1,4 @@
+import 'package:delicious_food_admin/controllers/add_item_controller.dart';
 import 'package:delicious_food_admin/controllers/authentication_controller.dart';
 import 'package:delicious_food_admin/controllers/home_controller.dart';
 import 'package:get/get.dart';
@@ -7,5 +8,6 @@ class AllBindings extends Bindings {
   void dependencies() {
     Get.put(AuthenticationController());
     Get.lazyPut(() => HomeController());
+    Get.put(AddItemController());
   }
 }
