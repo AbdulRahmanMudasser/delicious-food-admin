@@ -35,7 +35,7 @@ class LoginPage extends GetView<AuthenticationController> {
             left: 0,
             right: 0,
             child: Container(
-              height: 55.0.hp,
+              height: 50.0.hp,
               decoration: BoxDecoration(
                 gradient: const LinearGradient(
                   begin: Alignment.topLeft,
@@ -63,7 +63,7 @@ class LoginPage extends GetView<AuthenticationController> {
             ),
           ),
           Positioned(
-            top: 25.0.hp,
+            top: 20.0.hp,
             left: 5.5.wp,
             right: 5.5.wp,
             height: 45.0.hp,
@@ -95,6 +95,7 @@ class LoginPage extends GetView<AuthenticationController> {
                         hintText: "Email",
                         onEmptyText: "Please Enter Your Email",
                         icon: Icons.email_outlined,
+                        obscureText: false,
                       ),
 
                       SizedBox(
@@ -107,6 +108,7 @@ class LoginPage extends GetView<AuthenticationController> {
                         hintText: "Password",
                         onEmptyText: "Please Enter Your Password",
                         icon: Icons.lock_outlined,
+                        obscureText: true,
                       ),
 
                       SizedBox(
@@ -116,20 +118,23 @@ class LoginPage extends GetView<AuthenticationController> {
                       const Spacer(),
 
                       // login button
-                      ReusableButton(
-                        text: "LOGIN",
-                        color: Colors.black,
-                        onTap: () async {
-                          controller.closeKeyboard();
+                      Obx(() {
+                        return ReusableButton(
+                          text: "LOGIN",
+                          color: Colors.black,
+                          isLoading: controller.isLoading.value,
+                          onTap: () async {
+                            controller.closeKeyboard();
 
-                          // if (_formKey.currentState!.validate()) {
-                          //   controller.loginUser(
-                          //     controller.loginEmailController.text,
-                          //     controller.loginPasswordController.text,
-                          //   );
-                          // }
-                        },
-                      ),
+                            if (_formKey.currentState!.validate()) {
+                              controller.loginAdmin(
+                                controller.loginEmailController,
+                                controller.loginPasswordController,
+                              );
+                            }
+                          },
+                        );
+                      }),
                     ],
                   ),
                 ),
